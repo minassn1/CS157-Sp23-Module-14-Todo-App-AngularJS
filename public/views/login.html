@@ -1,0 +1,14 @@
+<form class="form-signin text-center">
+  <img class="mb-2" src="/images/key.png" alt="" width="72" height="72">
+  <h1 class="h3 mb-3">Please sign in</h1>
+
+  <input ng-model="email" type="email" class="form-control mb-3" placeholder="Email Address" required autofocus/>
+  <input ng-model="password" type="password" class="form-control mb-3" placeholder="Password" required/>
+  <button ng-click="login()" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+
+  <div ng-show="status" class="alert alert-info mt-3">{{ status }}</div>
+</form>
+
+<div class="alert alert-primary">
+  Don't have an account? <a href="#!/register">Register!</a>
+</div>

@@ -1,0 +1,27 @@
+<div class="jumbotron p-4" ng-init="loadTasks()">
+  <form name="myForm" class="form-row mb-3">
+    <div class="col-9">
+      <input name="task" ng-required="true" ng-model="task" type="text" class="form-control" placeholder="Enter task item"/>
+      <span ng-show="myForm.task.$error.required" class="badge badge-danger">Required</span>
+    </div>
+    <div class="col-3">
+      <button ng-disabled="myForm.$invalid" ng-click="addTask()" type="button" class="btn btn-primary form-control">Add</button>
+    </div>
+  </form>
+
+  <ul class="list-group">
+    <li ng-repeat="taskItem in tasks" class="list-group-item">
+      {{ taskItem.task }}
+      <button ng-click="removeTask(taskItem._id)" class="btn btn-danger btn-sm float-right">Delete</button>
+      <button ng-click="editTask(taskItem._id)" class="btn btn-success btn-sm float-right mr-2">Edit</button>
+    </li>
+    <!--
+    <li class="list-group-item" data-id="1">Learn Express
+      <button class="btn btn-danger btn-sm float-right">Delete</button>
+      <button class="btn btn-success btn-sm float-right mr-2">Edit</button>
+    </li>
+    -->
+  </ul>
+</div>
+
+<button ng-click="logout()" class="btn btn-danger">Logout</button>

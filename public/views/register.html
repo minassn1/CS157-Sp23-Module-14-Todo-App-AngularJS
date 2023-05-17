@@ -1,0 +1,10 @@
+<form class="form-signin text-center">
+  <h1 class="h3 mb-3">User Registration</h1>
+  <input ng-model="firstName" type="text" class="form-control mb-3" placeholder="First Name" required autofocus />
+  <input ng-model="lastName" type="text" class="form-control mb-3" placeholder="Last Name" required />
+  <input ng-model="email" type="email" class="form-control mb-3" placeholder="Email Address" required />
+  <input ng-model="password" type="password" class="form-control mb-3" placeholder="Password" required />
+  <button ng-click="register()" class="btn btn-lg btn-primary btn-block" type="button">Register</button>
+
+  <div ng-show="status" class="alert alert-info mt-3">{{ status }}</div>
+</form>
